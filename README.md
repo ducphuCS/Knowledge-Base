@@ -23,5 +23,5 @@ Courses:
 
 1. What is Neural Networks?
 
-
+[](images/Single Neural Network.jpg)
 a larger neural network is formed by taking many of single neural networks and stacking them together.
