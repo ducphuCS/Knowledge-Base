@@ -23,11 +23,11 @@ Courses:
 
 1. What is Neural Networks?
 
-![Example 1](./images/Single-NN.jpg)
+![Example 1](../images/Single-NN.jpg)
 
 a larger neural network is formed by taking many of single neural networks and stacking them together.
 
-![Example 2](./images/Example-2.png)
+![Example 2](../images/Example-2.png)
 
 - input x will be (size, #bedrooms, zip code, wealth).
 - output y is price
@@ -40,7 +40,7 @@ _Remark_:
 2. Supervised Learning with Neural networks
 In supervised learning, you have some input x, and you want to learn a function mapping to some output y.
 
-![Supervised Learning](./images/Example-Supervised-1.png)
+![Supervised Learning](../images/Example-Supervised-1.png)
 
 It turns out that different neural networks are useful for different applications
 
@@ -73,7 +73,7 @@ Scales drives DL progress:
 With small training sets, performance depends much more on your skill at engine features and other details of the algorithm.
 With large training sets, more consistently see the large NN dominating the other approaches.
 
-![Drivers of NN](./images/Drivers-of-NN.png)
+![Drivers of NN](../images/Drivers-of-NN.png)
 
 One of the huge breakthroughs in NN has been switching from a sigmoid function to a ReLU function.
 
@@ -105,9 +105,9 @@ _Notation_:
 - __m__ training examples
 - M_train and M_set for number of training and testing examples.
 
-![Notation](./images/notation-1.png)
+![Notation](../images/notation-1.png)
 
 2. Logistic Regression
 A learning algorithm that you use when the output labels y in a _supervised learning_ problem is either 1 or 0.
 
-![Log Regression](./images/log-regression-1.png)
+![Log Regression](../images/log-regression-1.png)
