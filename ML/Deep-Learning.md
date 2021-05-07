@@ -84,3 +84,30 @@ Switching to ReLU has caused the gradient descent work much faster.
 _Career Advice:_ __Geoffrey Hinton__
 - Read the literature but don't read too much of it.
 - Never stop programming.
+
+
+### Week 2
+#### Logistic Regression on a Neural Network
+
+_Purpose_
+- Some important technique when implementing neural network.
+- Computation of neural network: __forward propagation__ step and __backward propagation__ step
+- Why the computation, the learning an neural network can be organized in this forward and backward propagation.
+
+1. Binary Classification:
+
+We need to convert the image into _feature vector_ __X__, i.e. for 64*64 images, x has the dimension of 64 x 64 x 3 = 12288
+
+and predict whether the corresponding label __y__ is 1 or 0,
+
+_Notation_:
+- A single training example is represented by __a pair__ (x, y)
+- __m__ training examples
+- M_train and M_set for number of training and testing examples.
+
+![Notation](./images/notation-1.png)
+
+2. Logistic Regression
+A learning algorithm that you use when the output labels y in a _supervised learning_ problem is either 1 or 0.
+
+![Log Regression](./images/log-regression-1.png)
