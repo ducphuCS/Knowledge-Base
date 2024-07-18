@@ -1,0 +1,33 @@
+---
+title: "Learning how to create a R package"
+author: "Phu Nguyen-Duc"
+date: "2024-07-15"
+categories: [r, learning]
+---
+# Getting started
+
+- Main tools: `devtools`
+- Version control: `Git`
+- Documentation: `roxygen2`
+- Unit testing: `testthat`
+
+## create_package()
+
+The starting point to create a package that initiates required files and directories.
+
+* `Rbuildignore` list files that should not be included when building the R package. Which files belong to this "category" is discussed later.
+* `DESCRIPTION` provides metadata about the package.
+* `NAMESPACE` declares the functions your package exports for external use and the external functions your package imports from other packages. **Should not edit by hand**.
+
+## use_git()
+
+Use Git for the package
+
+## load_all()
+
+`load_all()` simulates the process of building, installing and attaching the package. As package increass in the number of functions, `load_all()` gives you a much more accurate sense of how the package is developing than test driving functions defined in the global environment. And much faster as well.
+
+## check()
+
+`check()` make sure that all the moving parts of the package still work and is a convenient way to run this without leaving your R session.
+

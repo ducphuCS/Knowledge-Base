@@ -1,0 +1,17 @@
+project:
+  type: website
+
+website:
+  title: "The Cannon Story"
+  navbar:
+    right:
+      - about.qmd
+      - icon: github
+        href: https://github.com/ducphuCS/Knowledge-Base/
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+
+
+
