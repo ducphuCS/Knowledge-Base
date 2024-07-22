@@ -18,7 +18,70 @@
     "href": "posts/2021/TOPSIS.html",
     "title": "TOPSIS",
     "section": "",
-    "text": "(Origin){https://en.m.wikipedia.org/wiki/TOPSIS}\nThe Technique for Order of Preference by Similarity to Ideal Solution (TOPSIS) is a multi-criteria decision analysis method. TOPSIS is based on the concept that the chosen alternative should have the shortest geometric distance from the positive ideal solution (PIS) and the longest geometric distance from the negative ideal solution (NIS)\n\nDescription It is a method of compensatory aggregation that compares a set of alternatives by identifying weights for each criterion, normalizing scores for each criterion and calculating the geometric distance between each alternative and the ideal alternative, which is the best score in each"
+    "text": "(Origin)[https://en.m.wikipedia.org/wiki/TOPSIS]\nThe Technique for Order of Preference by Similarity to Ideal Solution (TOPSIS) is a multi-criteria decision analysis method. TOPSIS is based on the concept that the chosen alternative should have the shortest geometric distance from the positive ideal solution (PIS) and the longest geometric distance from the negative ideal solution (NIS)\n\nDescription It is a method of compensatory aggregation that compares a set of alternatives by identifying weights for each criterion, normalizing scores for each criterion and calculating the geometric distance between each alternative and the ideal alternative, which is the best score in each"
+  },
+  {
+    "objectID": "posts/2024/r-package.html",
+    "href": "posts/2024/r-package.html",
+    "title": "Learning how to create a R package",
+    "section": "",
+    "text": "Main tools: devtools\nVersion control: Git\nDocumentation: roxygen2\nUnit testing: testthat\n\n\n\nThe starting point to create a package that initiates required files and directories.\n\nRbuildignore list files that should not be included when building the R package. Which files belong to this “category” is discussed later.\nDESCRIPTION provides metadata about the package.\nNAMESPACE declares the functions your package exports for external use and the external functions your package imports from other packages. Should not edit by hand.\n\n\n\n\nUse Git for the package\n\n\n\nload_all() simulates the process of building, installing and attaching the package. As package increass in the number of functions, load_all() gives you a much more accurate sense of how the package is developing than test driving functions defined in the global environment. And much faster as well.\n\n\n\ncheck() make sure that all the moving parts of the package still work and is a convenient way to run this without leaving your R session."
+  },
+  {
+    "objectID": "posts/2024/r-package.html#create_package",
+    "href": "posts/2024/r-package.html#create_package",
+    "title": "Learning how to create a R package",
+    "section": "",
+    "text": "The starting point to create a package that initiates required files and directories.\n\nRbuildignore list files that should not be included when building the R package. Which files belong to this “category” is discussed later.\nDESCRIPTION provides metadata about the package.\nNAMESPACE declares the functions your package exports for external use and the external functions your package imports from other packages. Should not edit by hand."
+  },
+  {
+    "objectID": "posts/2024/r-package.html#use_git",
+    "href": "posts/2024/r-package.html#use_git",
+    "title": "Learning how to create a R package",
+    "section": "",
+    "text": "Use Git for the package"
+  },
+  {
+    "objectID": "posts/2024/r-package.html#load_all",
+    "href": "posts/2024/r-package.html#load_all",
+    "title": "Learning how to create a R package",
+    "section": "",
+    "text": "load_all() simulates the process of building, installing and attaching the package. As package increass in the number of functions, load_all() gives you a much more accurate sense of how the package is developing than test driving functions defined in the global environment. And much faster as well."
+  },
+  {
+    "objectID": "posts/2024/r-package.html#check",
+    "href": "posts/2024/r-package.html#check",
+    "title": "Learning how to create a R package",
+    "section": "",
+    "text": "check() make sure that all the moving parts of the package still work and is a convenient way to run this without leaving your R session."
+  },
+  {
+    "objectID": "posts/2024/SPISE-2024/preparation.html",
+    "href": "posts/2024/SPISE-2024/preparation.html",
+    "title": "Preparation for SPISE",
+    "section": "",
+    "text": "Buổi workshop gồm 2 phần chính, cho 2 ngày:\nDocument này tổng hợp một số kiến thức nền về mặt concept để chuẩn bị cho buổi workshop một cách hiệu quả."
+  },
+  {
+    "objectID": "posts/2024/SPISE-2024/preparation.html#correlation",
+    "href": "posts/2024/SPISE-2024/preparation.html#correlation",
+    "title": "Preparation for SPISE",
+    "section": "Correlation",
+    "text": "Correlation\nResource\nHệ số tương quan là một phép đo cho tương quan tuyến tính giữa 2 biến (có thể là thuộc tính, quan sát, bộ dữ liệu, etc.). Lưu ý rằng hệ số tương quan có thể bị ảnh hưởng đáng kể bởi outlier và không thể hiện tính causal của 2 biến.\nMột số phân loại cho hệ số tương quan, tuỳ thuộc vào kiểu dữ liệu của biến đang được xét đến (liên tục, rời rạc có thứ tự hay rời rạc không thức tự):\n\nPearson\nCòn được gọi là inter-class correlation.\nHệ số tương quan Pearson là một phép đo thể hiện độ lớn và hướng của mối quan hệ tuyến tính giữa 2 biến, được tính bằng hiệp phương sai1 (covariance) chia cho tích độ lệch chuẩn (standard deviation) của 2 biến đó.\n\n\nIntra-class\nHay Intra-class correlation coefficient (ICC).\nLà một phép đo định lượng được thực hiện trên các mẫu trong cùng một nhóm, để thể hiện mức độ tương đồng giữa các mẫu đó. Khác với correlation thường được tính toán trên một cặp biến, ICC thường được thực hiện trên một nhóm các quan sát.\n\n\nRank\nÁp dụng cho dữ liệu rời rạc có thứ tự (ordinal scale). Thể hiện mức độ giống nhau giữa 2 “bảng xếp hạng” (rankings)."
+  },
+  {
+    "objectID": "posts/2024/SPISE-2024/preparation.html#dimensionality-reduction",
+    "href": "posts/2024/SPISE-2024/preparation.html#dimensionality-reduction",
+    "title": "Preparation for SPISE",
+    "section": "Dimensionality reduction",
+    "text": "Dimensionality reduction\nThu giảm số chiều của tập dữ liệu ban đầu mà vẫn giữ được phần lớn lượng thông tin. Một số kỹ thuật trong dimensionality reduction như SVD (singular value decomposition) và PCA (principle component analysis)\nSVD trả lời câu hỏi: Ma trận ban đầu trải dài các vector theo hướng nào?2\nPhần tiếp theo liên quan đến key concept cho các phương pháp sẽ được thảo luận trong workshop"
+  },
+  {
+    "objectID": "posts/2024/SPISE-2024/preparation.html#footnotes",
+    "href": "posts/2024/SPISE-2024/preparation.html#footnotes",
+    "title": "Preparation for SPISE",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nGiá trị kỳ vọng của tích 2 biến trừ cho tích 2 giá trị kì vọng của từng biến↩︎\nIn what direction the matrix strecth an unit vector the most?↩︎"
   },
   {
     "objectID": "posts/welcome/index.html",
@@ -53,6 +116,6 @@
     "href": "index.html",
     "title": "Knowledge-Base",
     "section": "",
-    "text": "Welcome To My Blog\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nJul 15, 2024\n\n\nTristan O’Malley\n\n\n\n\n\n\n\n\n\n\n\n\nTOPSIS\n\n\n\n\n\n\nother\n\n\n\n\n\n\n\n\n\nMay 7, 2021\n\n\nPhu Nguyen-Duc\n\n\n\n\n\n\n\n\n\n\n\n\nDeep Learning\n\n\n\n\n\n\nmachine-learning\n\n\ndeep-learning\n\n\n\n\n\n\n\n\n\nJan 1, 2021\n\n\nPhu Nguyen-Duc\n\n\n\n\n\n\n\n\n\n\n\n\nSPAC\n\n\n\n\n\n\nfinance\n\n\n\n\n\n\n\n\n\nJan 1, 2021\n\n\nPhu Nguyen-Duc\n\n\n\n\n\n\nNo matching items"
+    "text": "Preparation for SPISE\n\n\nWorkshop 2: A multi-dimensional approach using MCA, MFA, and PLS with R\n\n\n\nr\n\n\nlearning\n\n\nspise\n\n\nmultivariate\n\n\nmulti-dimensional\n\n\nMCA\n\n\nMFA\n\n\nPLS\n\n\n\n\n\n\n\n\n\nJul 22, 2024\n\n\nPhu Nguyen-Duc\n\n\n\n\n\n\n\n\n\n\n\n\nLearning how to create a R package\n\n\n\n\n\n\nr\n\n\nlearning\n\n\n\n\n\n\n\n\n\nJul 15, 2024\n\n\nPhu Nguyen-Duc\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nJul 15, 2024\n\n\nTristan O’Malley\n\n\n\n\n\n\n\n\n\n\n\n\nTOPSIS\n\n\n\n\n\n\nother\n\n\n\n\n\n\n\n\n\nMay 7, 2021\n\n\nPhu Nguyen-Duc\n\n\n\n\n\n\n\n\n\n\n\n\nDeep Learning\n\n\n\n\n\n\nmachine-learning\n\n\ndeep-learning\n\n\n\n\n\n\n\n\n\nJan 1, 2021\n\n\nPhu Nguyen-Duc\n\n\n\n\n\n\n\n\n\n\n\n\nSPAC\n\n\n\n\n\n\nfinance\n\n\n\n\n\n\n\n\n\nJan 1, 2021\n\n\nPhu Nguyen-Duc\n\n\n\n\n\n\nNo matching items"
   }
 ]

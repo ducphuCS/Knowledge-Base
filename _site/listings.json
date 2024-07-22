@@ -2,6 +2,8 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/2024/SPISE-2024/preparation.html",
+      "/posts/2024/r-package.html",
       "/posts/welcome/index.html",
       "/posts/2021/TOPSIS.html",
       "/posts/2021/Deep-Learning.html",

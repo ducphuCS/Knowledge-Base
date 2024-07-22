@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Phu Nguyen-Duc">
+<meta name="dcterms.date" content="2024-07-15">
 
-<title>The Cannon Story - Knowledge-Base</title>
+<title>The Cannon Story - Learning how to create a R package</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,24 +25,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -68,77 +68,19 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-subtitle','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-subtitle","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">The Cannon Story</span>
     </a>
   </div>
@@ -149,7 +91,7 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
@@ -167,269 +109,81 @@ window.Quarto = {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page-left">
-      <h1 class="title">Knowledge-Base</h1>
-                      </div>
+    <div class="quarto-title column-body">
+      <h1 class="title">Learning how to create a R package</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">r</div>
+                <div class="quarto-category">learning</div>
+              </div>
+                  </div>
   </div>
     
   
-  <div class="quarto-title-meta column-page-left">
+  <div class="quarto-title-meta">
 
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Phu Nguyen-Duc </p>
+            </div>
+    </div>
       
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">July 15, 2024</p>
+      </div>
+    </div>
     
       
     </div>
     
   
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(6)</span></div><div class="category" data-category="MCA">MCA <span class="quarto-category-count">(1)</span></div><div class="category" data-category="MFA">MFA <span class="quarto-category-count">(1)</span></div><div class="category" data-category="PLS">PLS <span class="quarto-category-count">(1)</span></div><div class="category" data-category="deep-learning">deep-learning <span class="quarto-category-count">(1)</span></div><div class="category" data-category="finance">finance <span class="quarto-category-count">(1)</span></div><div class="category" data-category="learning">learning <span class="quarto-category-count">(2)</span></div><div class="category" data-category="machine-learning">machine-learning <span class="quarto-category-count">(1)</span></div><div class="category" data-category="multi-dimensional">multi-dimensional <span class="quarto-category-count">(1)</span></div><div class="category" data-category="multivariate">multivariate <span class="quarto-category-count">(1)</span></div><div class="category" data-category="news">news <span class="quarto-category-count">(1)</span></div><div class="category" data-category="other">other <span class="quarto-category-count">(1)</span></div><div class="category" data-category="r">r <span class="quarto-category-count">(2)</span></div><div class="category" data-category="spise">spise <span class="quarto-category-count">(1)</span></div></div></div>
+    
 <!-- main -->
-<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
 
 
+<section id="getting-started" class="level1">
+<h1>Getting started</h1>
+<ul>
+<li>Main tools: <code>devtools</code></li>
+<li>Version control: <code>Git</code></li>
+<li>Documentation: <code>roxygen2</code></li>
+<li>Unit testing: <code>testthat</code></li>
+</ul>
+<section id="create_package" class="level2">
+<h2 class="anchored" data-anchor-id="create_package">create_package()</h2>
+<p>The starting point to create a package that initiates required files and directories.</p>
+<ul>
+<li><code>Rbuildignore</code> list files that should not be included when building the R package. Which files belong to this “category” is discussed later.</li>
+<li><code>DESCRIPTION</code> provides metadata about the package.</li>
+<li><code>NAMESPACE</code> declares the functions your package exports for external use and the external functions your package imports from other packages. <strong>Should not edit by hand</strong>.</li>
+</ul>
+</section>
+<section id="use_git" class="level2">
+<h2 class="anchored" data-anchor-id="use_git">use_git()</h2>
+<p>Use Git for the package</p>
+</section>
+<section id="load_all" class="level2">
+<h2 class="anchored" data-anchor-id="load_all">load_all()</h2>
+<p><code>load_all()</code> simulates the process of building, installing and attaching the package. As package increass in the number of functions, <code>load_all()</code> gives you a much more accurate sense of how the package is developing than test driving functions defined in the global environment. And much faster as well.</p>
+</section>
+<section id="check" class="level2">
+<h2 class="anchored" data-anchor-id="check">check()</h2>
+<p><code>check()</code> make sure that all the moving parts of the package still work and is a convenient way to run this without leaving your R session.</p>
 
 
+</section>
+</section>
 
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="r,learning,spise,multivariate,multi-dimensional,MCA,MFA,PLS" data-listing-date-sort="1721581200000" data-listing-file-modified-sort="1721637700957" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="709">
-<div class="thumbnail">
-<p><a href="./posts/2024/SPISE-2024/preparation.html" class="no-external"></a></p><a href="./posts/2024/SPISE-2024/preparation.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="./posts/2024/SPISE-2024/preparation.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2024/SPISE-2024/preparation.html" class="no-external">Preparation for SPISE</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2024/SPISE-2024/preparation.html" class="no-external">Workshop 2: A multi-dimensional approach using MCA, MFA, and PLS with R</a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('r'); return false;">
-r
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('learning'); return false;">
-learning
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('spise'); return false;">
-spise
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('multivariate'); return false;">
-multivariate
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('multi-dimensional'); return false;">
-multi-dimensional
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('MCA'); return false;">
-MCA
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('MFA'); return false;">
-MFA
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('PLS'); return false;">
-PLS
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/2024/SPISE-2024/preparation.html" class="no-external">Buổi workshop gồm 2 phần chính, cho 2 ngày:</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/2024/SPISE-2024/preparation.html" class="no-external">
-<div class="listing-date">
-Jul 22, 2024
-</div>
-<div class="listing-author">
-Phu Nguyen-Duc
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="r,learning" data-listing-date-sort="1720976400000" data-listing-file-modified-sort="1721271899216" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="156">
-<div class="thumbnail">
-<p><a href="./posts/2024/r-package.html" class="no-external"></a></p><a href="./posts/2024/r-package.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="./posts/2024/r-package.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2024/r-package.html" class="no-external">Learning how to create a R package</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2024/r-package.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('r'); return false;">
-r
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('learning'); return false;">
-learning
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/2024/r-package.html" class="no-external">The starting point to create a package that initiates required files and directories.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/2024/r-package.html" class="no-external">
-<div class="listing-date">
-Jul 15, 2024
-</div>
-<div class="listing-author">
-Phu Nguyen-Duc
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="news" data-listing-date-sort="1720976400000" data-listing-file-modified-sort="1721270228182" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="32">
-<div class="thumbnail">
-<p><a href="./posts/welcome/index.html" class="no-external"></a></p><a href="./posts/welcome/index.html" class="no-external">
-<p class="card-img-top"><img src="posts/welcome/thumbnail.jpg"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./posts/welcome/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/welcome/index.html" class="no-external">Welcome To My Blog</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/welcome/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('news'); return false;">
-news
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/welcome/index.html" class="no-external">This is the first post in a Quarto blog. Welcome!</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/welcome/index.html" class="no-external">
-<div class="listing-date">
-Jul 15, 2024
-</div>
-<div class="listing-author">
-Tristan O’Malley
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="other" data-listing-date-sort="1620320400000" data-listing-file-modified-sort="1721272199948" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="96">
-<div class="thumbnail">
-<p><a href="./posts/2021/TOPSIS.html" class="no-external"></a></p><a href="./posts/2021/TOPSIS.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="./posts/2021/TOPSIS.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2021/TOPSIS.html" class="no-external">TOPSIS</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2021/TOPSIS.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('other'); return false;">
-other
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/2021/TOPSIS.html" class="no-external">(Origin)[https://en.m.wikipedia.org/wiki/TOPSIS]</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/2021/TOPSIS.html" class="no-external">
-<div class="listing-date">
-May 7, 2021
-</div>
-<div class="listing-author">
-Phu Nguyen-Duc
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="4" data-categories="machine-learning,deep-learning" data-listing-date-sort="1609459200000" data-listing-file-modified-sort="1721270628549" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="600">
-<div class="thumbnail">
-<p><a href="./posts/2021/Deep-Learning.html" class="no-external"></a></p><a href="./posts/2021/Deep-Learning.html" class="no-external">
-<p class="card-img-top"><img src="posts/2021/images/Single-NN.jpg"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./posts/2021/Deep-Learning.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2021/Deep-Learning.html" class="no-external">Deep Learning</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2021/Deep-Learning.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('machine-learning'); return false;">
-machine-learning
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('deep-learning'); return false;">
-deep-learning
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/2021/Deep-Learning.html" class="no-external"><strong>What you’ll learn</strong> Courses: 1. Neural Networks and Deep Learning: Build NN and train data 2. Improving Deep Neural Networks: Hyperparameter tuning, Regularization and…</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/2021/Deep-Learning.html" class="no-external">
-<div class="listing-date">
-Jan 1, 2021
-</div>
-<div class="listing-author">
-Phu Nguyen-Duc
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="5" data-categories="finance" data-listing-date-sort="1609459200000" data-listing-file-modified-sort="1721270593417" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="812">
-<div class="thumbnail">
-<p><a href="./posts/2021/SPAC.html" class="no-external"></a></p><a href="./posts/2021/SPAC.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="./posts/2021/SPAC.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2021/SPAC.html" class="no-external">SPAC</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2021/SPAC.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('finance'); return false;">
-finance
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/2021/SPAC.html" class="no-external">Original Link</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/2021/SPAC.html" class="no-external">
-<div class="listing-date">
-Jan 1, 2021
-</div>
-<div class="listing-author">
-Phu Nguyen-Duc
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
